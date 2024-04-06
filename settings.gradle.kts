@@ -25,8 +25,8 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "pluginForCP"
-include(":app")
+//include(":app")
 //include(":feedui")
-include(":initializer")
+//include(":initializer")
 include(":lib")
 //includeBuild("./lib")
