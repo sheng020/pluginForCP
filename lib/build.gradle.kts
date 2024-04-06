@@ -43,7 +43,7 @@ dependencies {
 
 
 gradlePlugin {
-    val pluginId = "com.example.test"
+    val pluginId = "com.android.build.proguard"
     plugins {
         create(pluginId) {
             description = "Gradle Plugins for Lovely Systems Projects"
@@ -62,14 +62,18 @@ gradlePlugin {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "org.sample"
-            artifactId = "library"
-            version = "1.1"
+            groupId = "com.android.build"
+            artifactId = "proguard-library"
+            version = "1.1.0"
 
             from(components["java"])
         }
     }
     repositories {
         mavenLocal()
+        maven {
+            // 生成的插件位置
+            url = uri("../repo")
+        }
     }
 }
